@@ -57,7 +57,7 @@ const AddFormScreen: React.FC<Props> = () => {
       if (result.message === 'Listing added successfully') {
         Alert.alert('Success', 'Your rent listing has been submitted.');
         console.log('Submitting:', formData);
-console.log('Response:', result);
+        console.log('Response:', result);
 
       } else {
         Alert.alert('Error', result.message);

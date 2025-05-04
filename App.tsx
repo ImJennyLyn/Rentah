@@ -1,27 +1,17 @@
 // App.tsx
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { Button, Text, View } from 'react-native';
-import AddFormScreen from './Add_Form'; // 👈 Import the form screen
+import HomeScreen from './routes/home_screen';
 
-type RootStackParamList = {
+import AddFormScreen from './Add_Form';
+
+export type RootStackParamList = {
   Home: undefined;
   AddForm: undefined;
 };
 
-type HomeScreenProps = StackScreenProps<RootStackParamList, 'Home'>;
-
 const Stack = createStackNavigator<RootStackParamList>();
-
-const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button title="Go to Add Form" onPress={() => navigation.navigate('AddForm')} />
-    </View>
-  );
-};
 
 export default function App() {
   return (
